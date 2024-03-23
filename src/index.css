@@ -25,14 +25,22 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
   min-width: 320px;
   min-height: 100vh;
+  padding: 2rem; /* Add padding around the content */
+}
+
+.App {
+  max-width: 100%; /* Ensure it doesn't overflow the viewport width */
+  text-align: center; /* Center the text for smaller screens */
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin-bottom: 2rem; /* Space between the title and content */
 }
 
 button {
@@ -45,6 +53,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin-bottom: 2rem; /* Space between button and image */
 }
 button:hover {
   border-color: #646cff;
@@ -52,6 +61,23 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+img {
+  max-width: 300px; /* Maximum width for the image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: rounded corners for the image */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add shadow to image */
+  margin: 0 auto; /* Center the image horizontally */
+  display: block; /* Needed to center the image as a block element */
+}
+
+
+/* Additional responsive styling */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.4em; /* Smaller font size on small screens */
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -65,4 +91,19 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* CatInfo styles */
+ul {
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+  margin-top: 2rem; /* Space between image and cat info */
+}
+li {
+  margin-bottom: 0.5rem; /* Space between list items */
+  cursor: pointer; /* Indicate interactive items */
+  transition: color 0.25s;
+}
+li:hover {
+  color: #646cff; /* Interaction color */
 }
